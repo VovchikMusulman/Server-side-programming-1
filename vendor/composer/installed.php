@@ -3,7 +3,7 @@
         'name' => 'gr426_atvni/adhexca-m6',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6d8aa5fef513ef0bcf6ac0957ced3c2e0435fa15',
+        'reference' => '1d7e4b3f6cd5b1d1a70f255a52b49b41a0c203bd',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'gr426_atvni/adhexca-m6' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6d8aa5fef513ef0bcf6ac0957ced3c2e0435fa15',
+            'reference' => '1d7e4b3f6cd5b1d1a70f255a52b49b41a0c203bd',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
