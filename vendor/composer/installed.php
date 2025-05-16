@@ -3,7 +3,7 @@
         'name' => 'gr426_atvni/adhexca-m6',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1d7e4b3f6cd5b1d1a70f255a52b49b41a0c203bd',
+        'reference' => '260dcb362ebc788c0c1b1eba701dc718dbc1fc50',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'gr426_atvni/adhexca-m6' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1d7e4b3f6cd5b1d1a70f255a52b49b41a0c203bd',
+            'reference' => '260dcb362ebc788c0c1b1eba701dc718dbc1fc50',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -143,6 +143,17 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nikic/fast-route' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'd3ada013d0f683ad2a8d0614fc97917a6ab72ce9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nikic/fast-route',
+            'aliases' => array(
+                0 => '2.0.x-dev',
+            ),
             'dev_requirement' => false,
         ),
         'psr/clock' => array(
