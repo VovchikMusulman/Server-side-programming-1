@@ -2,8 +2,15 @@
 
 use Src\Route;
 
-Route::add('GET', '/hello', [Controller\Site::class, 'hello'])
-    ->middleware('auth');
+// Публичные маршруты
+Route::add('GET', '/', [Controller\Site::class, 'index']);
+Route::add('GET', '/popular-books', [Controller\Site::class, 'popularbooks']);
 Route::add(['GET', 'POST'], '/signup', [Controller\Site::class, 'signup']);
 Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login']);
-Route::add('GET', '/logout', [Controller\Site::class, 'logout']);
+
+// Защищенные маршруты (требуют аутентификации)
+Route::add('GET', '/logout', [Controller\Site::class, 'logout'])->middleware('auth');
+Route::add(['GET', 'POST'], '/add-books', [Controller\Book::class, 'addBook'])
+    ->middleware('auth');
+//Route::add('GET', '/add-book', [Controller\Book::class, 'addbook'])->middleware('auth');
+// ... другие маршруты управления
