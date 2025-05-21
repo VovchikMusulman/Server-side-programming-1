@@ -12,13 +12,12 @@
 <header>
     <nav>
         <a href="<?= app()->route->getUrl('/add-books') ?>">Добавить книгу</a>
-        <a href="<?= app()->route->getUrl('/add-reader') ?>">Добавить книгу</a>
-        <a href="../managementPages/AddReader.html">Добавить читателя</a>
-        <a href="../managementPages/GiveBook.html">Выдать книгу</a>
+        <a href="<?= app()->route->getUrl('/add-reader') ?>">Добавить читателя</a>
+        <a href="<?= app()->route->getUrl('/give-books') ?>">Выдать книгу</a>
         <a href="../managementPages/AcceptBook.html">Принять книгу</a>
         <a href="../managementPages/ReadersBooks.html">Книги у читателей</a>
         <a href="../managementPages/GiveHistory.html">Историю выдачи</a>
-        <a href="../managementPages/PopularBook.html">Популярные книги</a>
+        <a href="<?= app()->route->getUrl('/popular-books') ?>">Популярные книги</a>
         <a href="../managementPages/AddLibrarians.html">Добавлять библиотекарей</a>
     </nav>
     <div>
@@ -44,6 +43,5 @@
 <main>
     <?= $content ?? '' ?>
 </main>
-<script src="/public/js/main.js"></script>
 </body>
 </html>

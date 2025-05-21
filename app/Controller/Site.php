@@ -2,7 +2,9 @@
 
 namespace Controller;
 
-use Model\Post;
+use Model\Book;
+
+// Изменяем Post на Book
 use Src\View;
 use Src\Request;
 use Model\User;
@@ -15,12 +17,12 @@ class Site
         $id = $request->get('id');
 
         if ($id) {
-            $posts = Post::where('id', $id)->get();
+            $books = Book::where('id', $id)->get();
         } else {
-            $posts = Post::all(); // или вернуть все посты, если id не указан
+            $books = Book::all(); // Получаем все книги вместо постов
         }
 
-        return (new View())->render('site.main', ['posts' => $posts]);
+        return (new View())->render('site.main', ['books' => $books]); // Меняем posts на books
     }
 
     public function signup(Request $request): string
@@ -33,15 +35,12 @@ class Site
 
     public function login(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
         if ($request->method === 'GET') {
             return new View('site.login');
         }
-        //Если удалось аутентифицировать пользователя, то редирект
         if (Auth::attempt($request->all())) {
             app()->route->redirect('/');
         }
-        //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
@@ -53,6 +52,7 @@ class Site
 
     public function popularbooks(): string
     {
-        return new View('site.popular-books');
+        $popularBooks = Book::orderBy('views', 'desc')->take(5)->get(); // Пример для популярных книг
+        return new View('site.popular-books', ['books' => $popularBooks]);
     }
 }

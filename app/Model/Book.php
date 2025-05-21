@@ -4,6 +4,7 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Model\Reader;
 
 class Book extends Model
 {
@@ -15,13 +16,16 @@ class Book extends Model
         'author',
         'year',
         'description',
-        'category_id'
+        'category_id',
+        'reader_id',    // ID читателя, которому выдана книга
+        'issue_date',   // Дата выдачи
+        'return_date'  // Дата возврата
     ];
 
     // Отношение с категорией (если есть модель Category)
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Reader::class);
     }
 
     // Мутатор для заголовка

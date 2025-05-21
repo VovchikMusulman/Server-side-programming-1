@@ -53,10 +53,15 @@ header > div nav {
 }
 
 .content {
+    display: flex;
     background-color: #202020;
     border-radius: 5px;
     width: 1200px;
     padding: 30px;
+}
+
+section {
+    display: flex;
 }
 
 article {
