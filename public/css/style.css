@@ -127,3 +127,15 @@ input :active, :hover, :focus {
     outline: 0;
     outline-offset: 0;
 }
+
+.book-form {
+    display: flex;
+    background-color: #202020;
+    border-radius: 5px;
+    width: 1200px;
+    padding: 30px;
+}
+
+.table {
+
+}

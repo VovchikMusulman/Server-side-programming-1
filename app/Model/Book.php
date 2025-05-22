@@ -39,4 +39,9 @@ class Book extends Model
     {
         return $value ? $value . ' г.' : null;
     }
+
+    public function reader()
+    {
+        return $this->belongsTo(Reader::class);
+    }
 }

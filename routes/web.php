@@ -13,3 +13,6 @@ Route::add('GET', '/logout', [Controller\Site::class, 'logout'])->middleware('au
 Route::add(['GET', 'POST'], '/add-books', [Controller\BookController::class, 'addBook'])->middleware('auth');
 Route::add(['GET', 'POST'], '/add-reader', [Controller\ReaderController::class, 'addReader'])->middleware('auth');
 Route::add(['GET', 'POST'], '/give-books', [Controller\ReaderController::class, 'giveBook'])->middleware('auth');
+Route::add('GET', '/readers-books', [Controller\ReaderController::class, 'readersBooks'])->middleware('auth');
+Route::add(['GET', 'POST'], '/accept-book', [Controller\BookController::class, 'acceptBook'])->middleware('auth');
+Route::add(['GET', 'POST'], '/add-librarians', [Controller\Site::class, 'addLibrarian'])->middleware('auth');

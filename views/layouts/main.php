@@ -10,16 +10,24 @@
 </head>
 <body>
 <header>
-    <nav>
-        <a href="<?= app()->route->getUrl('/add-books') ?>">Добавить книгу</a>
-        <a href="<?= app()->route->getUrl('/add-reader') ?>">Добавить читателя</a>
-        <a href="<?= app()->route->getUrl('/give-books') ?>">Выдать книгу</a>
-        <a href="../managementPages/AcceptBook.html">Принять книгу</a>
-        <a href="../managementPages/ReadersBooks.html">Книги у читателей</a>
-        <a href="../managementPages/GiveHistory.html">Историю выдачи</a>
-        <a href="<?= app()->route->getUrl('/popular-books') ?>">Популярные книги</a>
-        <a href="../managementPages/AddLibrarians.html">Добавлять библиотекарей</a>
-    </nav>
+    <?php if (app()->auth::check()): ?>
+        <?php $userRole = app()->auth::user()->role ?? ''; ?>
+
+        <?php if ($userRole === 'librarian' || $userRole === 'admin'): ?>
+            <nav>
+                <a href="<?= app()->route->getUrl('/add-books') ?>">Добавить книгу</a>
+                <a href="<?= app()->route->getUrl('/add-reader') ?>">Добавить читателя</a>
+                <a href="<?= app()->route->getUrl('/give-books') ?>">Выдать книгу</a>
+                <a href="<?= app()->route->getUrl('/accept-book') ?>">Принять книгу</a>
+                <a href="<?= app()->route->getUrl('/readers-books') ?>">Книги у читателей</a>
+
+                <?php if ($userRole === 'admin'): ?>
+                    <a href="<?= app()->route->getUrl('/add-librarians') ?>">Добавить библиотекаря</a>
+                <?php endif; ?>
+            </nav>
+        <?php endif; ?>
+    <?php endif; ?>
+
     <div>
         <h2>Library</h2>
         <nav>

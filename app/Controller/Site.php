@@ -28,7 +28,7 @@ class Site
     public function signup(Request $request): string
     {
         if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/go');
+            app()->route->redirect('/login');
         }
         return new View('site.signup');
     }
@@ -54,5 +54,21 @@ class Site
     {
         $popularBooks = Book::orderBy('views', 'desc')->take(5)->get(); // Пример для популярных книг
         return new View('site.popular-books', ['books' => $popularBooks]);
+    }
+
+    public function addLibrarian(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            $userData = $request->all();
+            $userData['role'] = 'librarian'; // Устанавливаем роль библиотекаря
+
+            if (User::create($userData)) {
+                app()->route->redirect('/add-librarians?success=1');
+            }
+        }
+
+        return (new View())->render('management.add-librarians', [
+            'success' => $request->get('success')
+        ]);
     }
 }

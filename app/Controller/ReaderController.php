@@ -62,4 +62,23 @@ class ReaderController
 
         return new View('management.add-reader');
     }
+
+    public function readersBooks(Request $request): string
+    {
+        try {
+            $books = Book::with('reader')
+                ->whereNotNull('reader_id')
+                ->orderBy('issue_date', 'desc')
+                ->get();
+
+            return (new View())->render('management.books-readers', [
+                'books' => $books
+            ]);
+
+        } catch (\Exception $e) {
+            // Логирование ошибки
+            error_log('Error in readersBooks: ' . $e->getMessage());
+            return (new View())->render('errors.500', [], 500);
+        }
+    }
 }

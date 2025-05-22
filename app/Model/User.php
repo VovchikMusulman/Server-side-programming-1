@@ -14,7 +14,8 @@ class User extends Model implements IdentityInterface
     protected $fillable = [
         'name',
         'login',
-        'password'
+        'password',
+        'role' // Добавляем поле для роли
     ];
 
     protected static function booted()
@@ -42,5 +43,10 @@ class User extends Model implements IdentityInterface
     {
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = md5($password);
     }
 }
