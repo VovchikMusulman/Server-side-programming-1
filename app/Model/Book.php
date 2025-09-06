@@ -15,7 +15,10 @@ class Book extends Model
         'title',
         'author',
         'year',
+        'price',
+        'is_new',
         'description',
+        'popular_book',
         'category_id',
         'reader_id',    // ID читателя, которому выдана книга
         'issue_date',   // Дата выдачи

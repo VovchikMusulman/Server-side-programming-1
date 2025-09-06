@@ -56,8 +56,14 @@ header > div nav {
     display: flex;
     background-color: #202020;
     border-radius: 5px;
-    width: 1200px;
+    max-width: 1200px;
     padding: 30px;
+    gap: 30px;
+}
+
+.book-card p {
+    text-indent: -5px;
+    margin-left: 5px;
 }
 
 section {
@@ -132,7 +138,6 @@ input :active, :hover, :focus {
     display: flex;
     background-color: #202020;
     border-radius: 5px;
-    width: 1200px;
     padding: 30px;
 }
 

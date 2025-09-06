@@ -1,4 +1,4 @@
-<div class="management-container">
+<div class="container">
     <h1>Добавление нового читателя</h1>
 
     <form method="post" class="management-form">

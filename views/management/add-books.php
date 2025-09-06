@@ -26,6 +26,16 @@
         </div>
 
         <div class="form-group">
+            <label for="price">Цена (руб.):</label>
+            <input type="number" id="price" name="price" class="form-control" step="0.01" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="is_new">Новое издание:</label>
+            <input type="checkbox" id="is_new" name="is_new" value="1">
+        </div>
+
+        <div class="form-group">
             <label for="description">Описание:</label>
             <textarea id="description" name="description" class="form-control" required></textarea>
         </div>
