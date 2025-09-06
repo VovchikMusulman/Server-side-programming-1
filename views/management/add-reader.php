@@ -1,40 +1,35 @@
+<?php /** @var bool $success */ ?>
 <div class="container">
-    <h1>Добавление нового читателя</h1>
+    <h1>Добавление читателя</h1>
 
-    <form method="post" class="management-form">
+    <?php if ($success): ?>
+        <div class="alert alert-success">Читатель успешно добавлен!</div>
+    <?php endif; ?>
+
+    <form method="post" class="reader-form">
         <div class="form-group">
-            <label>Фамилия:</label>
-            <input type="text" name="surname" required class="form-control">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label>Имя:</label>
-            <input type="text" name="name" required class="form-control">
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label>Отчество:</label>
-            <input type="text" name="patronymic" class="form-control">
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,15}">
         </div>
 
         <div class="form-group">
-            <label>Телефон:</label>
-            <input type="tel" name="phone" required class="form-control">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label>Адрес:</label>
-            <input type="text" name="address" required class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Email:</label>
-            <input type="email" name="email" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Дата рождения:</label>
-            <input type="date" name="birth_date" required class="form-control">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Добавить читателя</button>

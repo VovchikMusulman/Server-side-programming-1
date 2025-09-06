@@ -13,9 +13,11 @@ class User extends Model implements IdentityInterface
     public $timestamps = false;
     protected $fillable = [
         'name',
+        'lastname',
+        'phone',
         'login',
         'password',
-        'role' // Добавляем поле для роли
+        'role'
     ];
 
     protected static function booted()

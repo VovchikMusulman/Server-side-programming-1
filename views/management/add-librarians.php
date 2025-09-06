@@ -13,6 +13,16 @@
         </div>
 
         <div class="form-group">
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,15}">
+        </div>
+
+        <div class="form-group">
             <label for="login">Логин:</label>
             <input type="text" id="login" name="login" class="form-control" required>
         </div>

@@ -3,8 +3,6 @@
 namespace Controller;
 
 use Model\Book;
-
-// Изменяем Post на Book
 use Src\View;
 use Src\Request;
 use Model\User;
@@ -19,18 +17,28 @@ class Site
         if ($id) {
             $books = Book::where('id', $id)->get();
         } else {
-            $books = Book::all(); // Получаем все книги вместо постов
+            $books = Book::all();
         }
 
-        return (new View())->render('site.main', ['books' => $books]); // Меняем posts на books
+        return (new View())->render('site.main', ['books' => $books]);
     }
 
     public function signup(Request $request): string
     {
-        if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/login');
+        if ($request->method === 'POST') {
+            $userData = $request->all();
+            $userData['role'] = 'reader'; // По умолчанию регистрируем как читателя
+
+            if (User::create($userData)) {
+                app()->route->redirect('/login');
+            } else {
+                $message = 'Ошибка при регистрации';
+            }
         }
-        return new View('site.signup');
+
+        return (new View())->render('site.signup', [
+            'message' => $message ?? ''
+        ]);
     }
 
     public function login(Request $request): string
@@ -52,7 +60,7 @@ class Site
 
     public function popularbooks(): string
     {
-        $popularBooks = Book::orderBy('views', 'desc')->take(5)->get(); // Пример для популярных книг
+        $popularBooks = Book::orderBy('views', 'desc')->take(5)->get();
         return new View('site.popular-books', ['books' => $popularBooks]);
     }
 
@@ -60,7 +68,7 @@ class Site
     {
         if ($request->method === 'POST') {
             $userData = $request->all();
-            $userData['role'] = 'librarian'; // Устанавливаем роль библиотекаря
+            $userData['role'] = 'librarian';
 
             if (User::create($userData)) {
                 app()->route->redirect('/add-librarians?success=1');
@@ -68,6 +76,22 @@ class Site
         }
 
         return (new View())->render('management.add-librarians', [
+            'success' => $request->get('success')
+        ]);
+    }
+
+    public function addReader(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            $userData = $request->all();
+            $userData['role'] = 'reader';
+
+            if (User::create($userData)) {
+                app()->route->redirect('/add-reader?success=1');
+            }
+        }
+
+        return (new View())->render('management.add-reader', [
             'success' => $request->get('success')
         ]);
     }
