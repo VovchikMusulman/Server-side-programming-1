@@ -18,7 +18,6 @@
                 <a href="<?= app()->route->getUrl('/add-books') ?>">Добавить книгу</a>
                 <a href="<?= app()->route->getUrl('/add-reader') ?>">Добавить читателя</a>
                 <a href="<?= app()->route->getUrl('/give-books') ?>">Выдать книгу</a>
-                <a href="<?= app()->route->getUrl('/accept-book') ?>">Принять книгу</a>
                 <a href="<?= app()->route->getUrl('/readers-books') ?>">Книги у читателей</a>
 
                 <?php if ($userRole === 'admin'): ?>

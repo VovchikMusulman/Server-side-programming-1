@@ -9,7 +9,7 @@
         </div>
     <?php endif; ?>
 
-    <form method="post" class="book-form">
+    <form method="post" class="content">
         <div class="form-group">
             <label for="title">Название книги:</label>
             <input type="text" id="title" name="title" class="form-control" required>

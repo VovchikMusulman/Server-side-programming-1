@@ -6,12 +6,11 @@ body {
 
 main {
     padding: 0;
-    margin: 0;
+    margin: 160px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    margin-top: 160px;
 }
 
 a {
@@ -83,7 +82,6 @@ form {
     gap: 15px;
     align-items: center;
     background-color: #202020;
-    padding: 30px;
 }
 
 form div {
@@ -116,7 +114,7 @@ input[type="checkbox"] {
     height: 29px;
     width: 29px;
     border: none;
-    margin: 0px;
+    margin: 0;
     border-radius: 5px;
 }
 
@@ -127,11 +125,10 @@ input {
     padding: 7px;
 }
 
-.book-form {
+.content {
     display: flex;
+    gap: 15px;
     background-color: #202020;
-    border-radius: 5px;
-    padding: 30px;
 }
 
 .alert {
@@ -162,6 +159,12 @@ button {
     margin-left: auto;
 }
 
+.accept-button {
+    border-radius: 0;
+    padding: 0;
+    width: fit-content;
+}
+
 .form-control {
     border: none;
     border-radius: 5px;
@@ -169,3 +172,48 @@ button {
     padding: 7px;
     width: 200px;
 }
+
+.drop-list {
+    border: none;
+    border-radius: 5px;
+    background-color: #D0CDCD;
+    padding: 7px;
+    width: 214px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    background-color: #202020;
+    border-radius: 5px;
+    width: 1200px;
+    padding: 30px;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+tr{
+    gap: 30px;
+    display: flex;
+}
+
+th {
+    width: 200px;
+    height: 30px;
+}
+
+td {
+    width: 200px;
+    height: 30px;
+    background-color: #D0CDCD;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+

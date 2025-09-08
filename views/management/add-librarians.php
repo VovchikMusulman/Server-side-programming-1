@@ -6,7 +6,7 @@
         <div class="alert alert-success">Библиотекарь успешно добавлен!</div>
     <?php endif; ?>
 
-    <form method="post" class="librarian-form">
+    <form method="post" class="content">
         <div class="form-group">
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" class="form-control" required>

@@ -4,7 +4,7 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Model\Reader;
+use Model\User;
 
 class Book extends Model
 {
@@ -19,32 +19,12 @@ class Book extends Model
         'is_new',
         'description',
         'popular_book',
-        'category_id',
-        'reader_id',    // ID читателя, которому выдана книга
-        'issue_date',   // Дата выдачи
-        'return_date'  // Дата возврата
+        'reader_id'    // ID читателя, которому выдана книга
     ];
 
-    // Отношение с категорией (если есть модель Category)
-    public function category()
-    {
-        return $this->belongsTo(Reader::class);
-    }
-
-    // Мутатор для заголовка
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = ucfirst($value);
-    }
-
-    // Аксессор для года издания
-    public function getYearAttribute($value)
-    {
-        return $value ? $value . ' г.' : null;
-    }
-
+    // Исправленное отношение с читателем
     public function reader()
     {
-        return $this->belongsTo(Reader::class);
+        return $this->belongsTo(User::class, 'reader_id');
     }
 }

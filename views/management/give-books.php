@@ -1,34 +1,39 @@
-<?php /** @var \Src\View $this */ ?>
-<h1>Выдача книг</h1>
+<?php /** @var array $readers */ ?>
+<?php /** @var array $availableBooks */ ?>
+<?php /** @var bool $success */ ?>
 
-<?php if ($this->success): ?>
-    <div class="alert alert-success">Книга успешно выдана!</div>
-<?php endif; ?>
+<div class="container">
+    <h1>Выдача книги читателю</h1>
 
-<form method="post">
-    <div class="form-group">
-        <label for="book_id">Выберите книгу:</label>
-        <select name="book_id" id="book_id" class="form-control" required>
-            <option value="">-- Выберите книгу --</option>
-            <?php foreach ($books as $book): ?>
-                <option value="<?= $book->id ?>">
-                    <?= htmlspecialchars($book->title) ?> (<?= htmlspecialchars($book->author) ?>)
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+    <?php if ($success): ?>
+        <div class="alert alert-success">Книга успешно выдана читателю!</div>
+    <?php endif; ?>
 
-    <div class="form-group">
-        <label for="reader_id">Выберите читателя:</label>
-        <select name="reader_id" id="reader_id" class="form-control" required>
-            <option value="">-- Выберите читателя --</option>
-            <?php foreach ($readers as $reader): ?>
-                <option value="<?= $reader->id ?>">
-                    <?= htmlspecialchars($reader->name) ?> (№ <?= $reader->library_card ?>)
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+    <form method="post" class="content">
+        <div class="form-group">
+            <label for="reader_id">Выберите читателя:</label>
+            <select id="reader_id" name="reader_id" class="drop-list" required>
+                <option value="">Выберите читателя</option>
+                <?php foreach ($readers as $reader): ?>
+                    <option value="<?= $reader->id ?>">
+                        <?= htmlspecialchars($reader->name . ' ' . $reader->lastname . ' (' . $reader->phone . ')') ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Выдать книгу</button>
-</form>
+        <div class="form-group">
+            <label for="book_id">Выберите книгу:</label>
+            <select id="book_id" name="book_id" class="drop-list" required>
+                <option value="">Выберите книгу</option>
+                <?php foreach ($availableBooks as $book): ?>
+                    <option value="<?= $book->id ?>">
+                        <?= htmlspecialchars($book->title . ' - ' . $book->author . ' (' . $book->year . ')') ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Выдать книгу</button>
+    </form>
+</div>
