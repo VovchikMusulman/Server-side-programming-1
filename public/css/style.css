@@ -217,3 +217,7 @@ td {
     border-radius: 5px;
 }
 
+textarea {
+    resize: vertical;
+    max-width: 200px;
+}

@@ -6,7 +6,7 @@
         <div class="alert alert-info"><?= $message ?></div>
     <?php endif; ?>
 
-    <form method="post" class="signup-form">
+    <form method="post" class="content">
         <div class="form-group">
             <label for="login">Логин:</label>
             <input type="text" id="login" name="login" class="form-control" required>
