@@ -1,12 +1,11 @@
 <?php /** @var string $message */ ?>
 <div class="container">
     <h2>Авторизация</h2>
+    <h3><?= $message ?? ''; ?></h3>
 
-    <?php if (!empty($message)): ?>
-        <div class="alert alert-info"><?= $message ?></div>
-    <?php endif; ?>
-
+    <h3><?= app()->auth->user()->name ?? ''; ?></h3>
     <form method="post" class="content">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <div class="form-group">
             <label for="login">Логин:</label>
             <input type="text" id="login" name="login" class="form-control" required>

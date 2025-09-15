@@ -9,8 +9,9 @@
         echo '<div class="alert alert-info">' . $message . '</div>';
     }
     ?>
-
+    <pre><?= $message ?? ''; ?></pre>
     <form method="post" class="content">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <div class="form-group">
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" class="form-control" required>
