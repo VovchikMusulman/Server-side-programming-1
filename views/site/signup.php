@@ -2,9 +2,13 @@
 <div class="container">
     <h2>Регистрация нового пользователя</h2>
 
-    <?php if ($message): ?>
-        <div class="alert alert-info"><?= $message ?></div>
-    <?php endif; ?>
+    <?php
+    $message = $message ?? '';
+
+    if ($message) {
+        echo '<div class="alert alert-info">' . $message . '</div>';
+    }
+    ?>
 
     <form method="post" class="content">
         <div class="form-group">
