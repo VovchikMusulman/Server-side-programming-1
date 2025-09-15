@@ -14,12 +14,17 @@
         "php": "^7.4 | ^8.0",
         "illuminate/database": "10.x-dev",
         "illuminate/events": "10.x-dev",
-        "nikic/fast-route": "2.0.x-dev"
+        "nikic/fast-route": "2.0.x-dev",
+        "vovchikmusulman/validator": "dev-main"
     },
     "autoload": {
         "psr-4": {
             "Src\\": "core/Src/",
-            "": "app/"
+            "App\\": "app/",
+            "Model\\": "app/Model/",
+            "Validator\\": "vendor/vovchikmusulman/validator/Validators/",
+            "Middlewares\\": "app/Middlewares/",
+            "Controller\\": "app/Controller"
         }
     }
 }

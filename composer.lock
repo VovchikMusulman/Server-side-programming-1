@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18551a530da213935faf38be98c0d568",
+    "content-hash": "43fd8b8d35d3d3442478afcd4aa928e9",
     "packages": [
         {
             "name": "brick/math",
@@ -141,19 +141,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "6d6c96277ea252fc1304627204c3d5e6e15faa3b"
+                "reference": "8fd1e3289f1b04747427c4f1fd7af1e9c5364cb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/6d6c96277ea252fc1304627204c3d5e6e15faa3b",
-                "reference": "6d6c96277ea252fc1304627204c3d5e6e15faa3b",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/8fd1e3289f1b04747427c4f1fd7af1e9c5364cb6",
+                "reference": "8fd1e3289f1b04747427c4f1fd7af1e9c5364cb6",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^12.0 || ^13.0",
+                "doctrine/coding-standard": "^12.0 || ^14.0",
                 "phpstan/phpstan": "^1.12 || ^2.0",
                 "phpstan/phpstan-phpunit": "^1.4 || ^2.0",
                 "phpstan/phpstan-strict-rules": "^1.6 || ^2.0",
@@ -207,7 +207,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/inflector/issues",
-                "source": "https://github.com/doctrine/inflector/tree/2.1.0"
+                "source": "https://github.com/doctrine/inflector/tree/2.2.x"
             },
             "funding": [
                 {
@@ -223,7 +223,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-10T19:31:58+00:00"
+            "time": "2025-11-21T08:43:40+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "dcab448bff6b10068a8acf8d1de1c5d94366847c"
+                "reference": "6ae9c74fa92d4e1824d1b346cd435e8eacdc3232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/dcab448bff6b10068a8acf8d1de1c5d94366847c",
-                "reference": "dcab448bff6b10068a8acf8d1de1c5d94366847c",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/6ae9c74fa92d4e1824d1b346cd435e8eacdc3232",
+                "reference": "6ae9c74fa92d4e1824d1b346cd435e8eacdc3232",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +331,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-03-24T11:47:24+00:00"
+            "time": "2025-09-08T19:05:53+00:00"
         },
         {
             "name": "illuminate/conditionable",
@@ -706,12 +706,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "17e97e6c59fddbae6378417a447dc55f5f9718bb"
+                "reference": "28b505e671dbe119e4e32a75c78f87189d046e39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/17e97e6c59fddbae6378417a447dc55f5f9718bb",
-                "reference": "17e97e6c59fddbae6378417a447dc55f5f9718bb",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/28b505e671dbe119e4e32a75c78f87189d046e39",
+                "reference": "28b505e671dbe119e4e32a75c78f87189d046e39",
                 "shasum": ""
             },
             "require": {
@@ -769,7 +769,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-03-24T11:47:24+00:00"
+            "time": "2025-09-08T19:05:53+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1401,12 +1401,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "300b72643e89de0734d99a9e3f8494a3ef6936e1"
+                "reference": "d1fdeefd0707d15eb150c04e8837bf0b15ebea39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/300b72643e89de0734d99a9e3f8494a3ef6936e1",
-                "reference": "300b72643e89de0734d99a9e3f8494a3ef6936e1",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/d1fdeefd0707d15eb150c04e8837bf0b15ebea39",
+                "reference": "d1fdeefd0707d15eb150c04e8837bf0b15ebea39",
                 "shasum": ""
             },
             "require": {
@@ -1492,7 +1492,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-07-30T17:30:48+00:00"
+            "time": "2025-11-24T13:57:00+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -1650,6 +1650,47 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
+        },
+        {
+            "name": "vovchikmusulman/validator",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/VovchikMusulman/validator.git",
+                "reference": "5bd2d2bd3702e8fa07ca0d0bd0443eaca8e1eb5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/VovchikMusulman/validator/zipball/5bd2d2bd3702e8fa07ca0d0bd0443eaca8e1eb5f",
+                "reference": "5bd2d2bd3702e8fa07ca0d0bd0443eaca8e1eb5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Validators\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "VovchikMusulman",
+                    "email": "slavaatam83@gmail.com"
+                }
+            ],
+            "description": "A simple validation library",
+            "support": {
+                "issues": "https://github.com/VovchikMusulman/validator/issues",
+                "source": "https://github.com/VovchikMusulman/validator/tree/main"
+            },
+            "time": "2025-11-26T15:34:23+00:00"
         }
     ],
     "packages-dev": [],
@@ -1658,7 +1699,8 @@
     "stability-flags": {
         "illuminate/database": 20,
         "illuminate/events": 20,
-        "nikic/fast-route": 20
+        "nikic/fast-route": 20,
+        "vovchikmusulman/validator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

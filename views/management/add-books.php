@@ -9,7 +9,8 @@
         </div>
     <?php endif; ?>
 
-    <form method="post" class="content">
+    <form method="post" class="content" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>"/>
         <div class="form-group">
             <label for="title">Название книги:</label>
             <input type="text" id="title" name="title" class="form-control" required>
@@ -38,6 +39,11 @@
         <div class="form-group">
             <label for="description">Описание:</label>
             <textarea id="description" name="description" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Обложка книги:</label>
+            <input type="file" id="image" name="image" accept="image/*">
         </div>
 
         <button type="submit" class="btn btn-primary">Добавить книгу</button>

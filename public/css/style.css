@@ -221,3 +221,9 @@ textarea {
     resize: vertical;
     max-width: 200px;
 }
+
+img {
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+}
