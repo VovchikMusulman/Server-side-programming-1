@@ -19,7 +19,8 @@ class Book extends Model
         'is_new',
         'description',
         'popular_book',
-        'reader_id'    // ID читателя, которому выдана книга
+        'reader_id',    // ID читателя, которому выдана книга
+        'image'         // Добавляем поле для изображения
     ];
 
     // Исправленное отношение с читателем
