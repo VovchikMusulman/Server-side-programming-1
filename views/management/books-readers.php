@@ -27,6 +27,7 @@
                     <td><?= htmlspecialchars($book->price) ?> руб.</td>
                     <td>
                         <form method="post" style="display:inline;">
+                            <input type="hidden" name="csrf_token" value="<?= \Src\Session::get('csrf_token') ?>">
                             <input type="hidden" name="book_id" value="<?= $book->id ?>">
                             <button type="submit" class="accept-button">Принять книгу</button>
                         </form>

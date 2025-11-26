@@ -7,6 +7,7 @@
     <?php endif; ?>
 
     <form method="post" class="content">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Session::get('csrf_token') ?>">
         <div class="form-group">
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" class="form-control" required>

@@ -18,4 +18,9 @@ class Session
     {
         unset($_SESSION[$name]);
     }
+
+    public static function has(string $key): bool
+    {
+        return !empty(self::get($key));
+    }
 }

@@ -76,15 +76,16 @@ class BookController
             $validator = new Validator($request->all(), [
                 'title' => ['required'],
                 'author' => ['required'],
-                'year' => ['required', 'numeric', 'min:1000', 'max:' . date('Y')],
+                'year' => ['required', 'date_format:Y'], // Изменено на проверку года
                 'price' => ['required', 'numeric', 'min:0'],
                 'description' => ['max:1000'],
-                'image' => ['file_extension:jpeg,png,jpg,gif', 'file_size:2048'] // Валидация файла
+                'image' => ['file_extension:jpeg,png,jpg,gif', 'file_size:2048']
             ], [
                 'required' => 'Поле :field обязательно для заполнения',
                 'numeric' => 'Поле :field должно быть числом',
                 'min' => 'Поле :field должно быть не меньше :min',
                 'max' => 'Поле :field должно быть не больше :max',
+                'date_format' => 'Поле :field должно быть корректным годом', // Новое сообщение
                 'file_extension' => 'Файл :field должен быть одного из следующих типов: :file_extension',
                 'file_size' => 'Размер файла :field не должен превышать :file_size КБ'
             ]);
@@ -94,9 +95,15 @@ class BookController
             }
 
             $bookData = $request->all();
+
+            // Преобразуем дату в год
+            if (!empty($bookData['year'])) {
+                $bookData['year'] = date('Y', strtotime($bookData['year']));
+            }
+
             $bookData['is_new'] = isset($bookData['is_new']) ? 1 : 0;
             $bookData['popular_book'] = isset($bookData['popular_book']) ? 1 : 0;
-            $bookData['image'] = null; // По умолчанию null
+            $bookData['image'] = null;
 
             // Обработка загрузки изображения
             if ($request->files()['image']['tmp_name']) {

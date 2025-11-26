@@ -10,6 +10,7 @@
     <?php endif; ?>
 
     <form method="post" class="content">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Session::get('csrf_token') ?>">
         <div class="form-group">
             <label for="reader_id">Выберите читателя:</label>
             <select id="reader_id" name="reader_id" class="drop-list" required>

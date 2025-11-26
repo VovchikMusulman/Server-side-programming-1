@@ -1,13 +1,10 @@
 <h1>Книги</h1>
-<?php
-$baseUrl = '/Server-side-programming-1/public';
-?>
 <section class="content">
     <?php foreach ($books as $book): ?>
         <article class="book-card">
             <h3><?= htmlspecialchars($book->title) ?></h3>
             <?php if (!empty($book->image)): ?>
-                <img src="<?= $baseUrl . $book->image ?>" alt="Обложка книги">
+                <img src="<?= $book->image ?>" alt="Обложка книги">
             <?php else: ?>
                 <p>Обложка отсутствует</p>
             <?php endif; ?>
